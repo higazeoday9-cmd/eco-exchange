@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Browse Items - Eco Exchange</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            background-color: #32a852;
+            color: #fff;
+            padding: 0.5em 1em;
+            border-radius: 8px;
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2em;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li a {
+            font-family: 'Playfair Display', serif;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            padding: 3em 2em;
+        }
+
+        .item-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2em;
+            justify-content: center;
+        }
+
+        .item {
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            padding: 1em;
+            text-align: center;
+            width: 300px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .item:hover {
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .item img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .contact-btn {
+            margin-top: 1em;
+            padding: 0.5em 1em;
+            background-color: #32a852;
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 1em;
+        }
+
+        .contact-btn:hover {
+            background-color: #28a745;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2em;
+            background-color: #ffffff;
+            border-top: 1px solid #d2d2d7;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Eco Exchange</h1>
+        <nav>
+    <ul>
+        <li><a href="index.html">Home Page</a></li>
+        <li><a href="browse-items.html">Browse Items</a></li>
+        <li><a href="sign-in.html">Sign-In</a></li>
+        <li><a href="wallet.html">Wallet</a></li>
+        <li><a href="add-item.html">Add Item</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
+        <div id="profile-container">
+            <!-- Profile icon will be dynamically added here -->
+        </div>
+    </header>
+
+    <section class="section">
+        <h2>Browse Items</h2>
+        <p>How does it work?</p>
+        <p>Contact the seller to buy or trade a product for Eco Points. You earn 30 Eco Points for adding an item, and the requested Eco Points for trading an item.</p>
+        <div class="item-list"></div>
+    </section>
+
+    <footer class="footer">
+            <p>&copy; 2025 Eco Exchange. All Rights Reserved to oday higaze. Promoting sustainability and waste reduction.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const itemList = document.querySelector(".item-list");
+
+            // Fetch items from local storage
+            const items = JSON.parse(localStorage.getItem("ecoItems")) || [];
+
+            // Render items
+            function renderItems() {
+                itemList.innerHTML = ""; // Clear existing items
+                items.forEach(item => {
+                    const itemDiv = document.createElement("div");
+                    itemDiv.classList.add("item");
+                    itemDiv.innerHTML = `
+                        <img src="${item.item.image}" alt="${item.item.name}">
+                        <h3>${item.item.name}</h3>
+                        <p>Price: $${item.item.priceUsd} / ${item.item.priceEco} Eco Points</p>
+                        <p>Contact: ${item.item.contact}</p>
+                        <p>Location: ${item.user.region}, ${item.user.country}</p>
+                        <p>Seller: ${item.user.name} (${item.user.email})</p>
+                    `;
+                    itemList.appendChild(itemDiv);
+                });
+            }
+
+            renderItems();
+        });
+    </script>
+</body>
+</html>
+
+
+

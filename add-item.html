@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Item - Eco Exchange</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            background-color: #32a852;
+            color: #fff;
+            padding: 0.5em 1em;
+            border-radius: 8px;
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2em;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li a {
+            font-family: 'Playfair Display', serif;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            padding: 3em 2em;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            margin-bottom: 1em;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1em;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        .form-group textarea {
+            resize: none;
+            height: 100px;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 0.75em;
+            background-color: #32a852;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #28a745;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2em;
+            background-color: #ffffff;
+            border-top: 1px solid #d2d2d7;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Eco Exchange</h1>
+        <nav>
+    <ul>
+        <li><a href="index.html">Home Page</a></li>
+        <li><a href="browse-items.html">Browse Items</a></li>
+        <li><a href="sign-in.html">Sign-In</a></li>
+        <li><a href="wallet.html">Wallet</a></li>
+        <li><a href="add-item.html">Add Item</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
+        <div id="profile-container">
+            <!-- Profile icon will be dynamically added here -->
+        </div>
+    </header>
+
+    <section class="section">
+        <h2>Add Item</h2>
+        <form action="#" method="post">
+            <div class="form-group">
+                <label for="user-name">Your Name</label>
+                <input type="text" id="user-name" name="user-name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="user-email">Your Email</label>
+                <input type="email" id="user-email" name="user-email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="user-region">Region</label>
+                <input type="text" id="user-region" name="user-region" placeholder="Enter your region" required>
+            </div>
+            <div class="form-group">
+                <label for="user-country">Country</label>
+                <input type="text" id="user-country" name="user-country" placeholder="Enter your country" required>
+            </div>
+            <div class="form-group">
+                <label for="user-address">Address (Optional)</label>
+                <input type="text" id="user-address" name="user-address" placeholder="Enter your address">
+            </div>
+            <div class="form-group">
+                <label for="item-name">Item Name</label>
+                <input type="text" id="item-name" name="item-name" placeholder="Enter the item name" required>
+            </div>
+            <div class="form-group">
+                <label for="item-description">Description</label>
+                <textarea id="item-description" name="item-description" placeholder="Provide a description of the item" required></textarea>
+            </div>
+            <div class="form-group">
+                <label for="item-price-usd">Price (in USD)</label>
+                <input type="number" id="item-price-usd" name="item-price-usd" placeholder="Enter the price in USD" required>
+            </div>
+            <div class="form-group">
+                <label for="item-price-eco">Price (in Eco Points)</label>
+                <input type="number" id="item-price-eco" name="item-price-eco" placeholder="Enter the price in Eco Points" required>
+            </div>
+            <div class="form-group">
+                <label for="contact-number">Contact Number</label>
+                <input type="tel" id="contact-number" name="contact-number" placeholder="Enter your contact number" required>
+            </div>
+            <div class="form-group">
+                <label for="item-image">Upload Image</label>
+                <input type="file" id="item-image" name="item-image" accept="image/*" required>
+            </div>
+            <button type="submit" class="submit-btn">Submit</button>
+        </form>
+    </section>
+
+    <footer class="footer">
+            <p>&copy; 2025 Eco Exchange. All Rights Reserved to oday higaze. Promoting sustainability and waste reduction.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.querySelector("form").addEventListener("submit", function (e) {
+            e.preventDefault(); // Prevent form submission
+            const userName = document.getElementById("user-name").value;
+            const userEmail = document.getElementById("user-email").value;
+            const userRegion = document.getElementById("user-region").value;
+            const userCountry = document.getElementById("user-country").value;
+            const userAddress = document.getElementById("user-address").value || "N/A";
+            const itemName = document.getElementById("item-name").value;
+            const itemDescription = document.getElementById("item-description").value;
+            const itemPriceUsd = document.getElementById("item-price-usd").value;
+            const itemPriceEco = document.getElementById("item-price-eco").value;
+            const contactNumber = document.getElementById("contact-number").value;
+            const itemImage = document.getElementById("item-image").files[0];
+
+            // Read image as base64 string
+            const reader = new FileReader();
+            reader.onload = function () {
+                const newItem = {
+                    user: {
+                        name: userName,
+                        email: userEmail,
+                        region: userRegion,
+                        country: userCountry,
+                        address: userAddress,
+                    },
+                    item: {
+                        name: itemName,
+                        description: itemDescription,
+                        priceUsd: itemPriceUsd,
+                        priceEco: itemPriceEco,
+                        contact: contactNumber,
+                        image: reader.result,
+                    }
+                };
+
+                // Retrieve existing items or initialize an empty array
+                const existingItems = JSON.parse(localStorage.getItem("ecoItems")) || [];
+                existingItems.push(newItem);
+
+                // Save the updated items back to local storage
+                localStorage.setItem("ecoItems", JSON.stringify(existingItems));
+
+                // Notify the user and redirect
+                alert("Item added successfully!");
+                window.location.href = "browse-items.html";
+            };
+            reader.readAsDataURL(itemImage);
+        });
+        // Award 30 Eco Points
+const currentWallet = JSON.parse(localStorage.getItem("currentWallet"));
+if (currentWallet) {
+    currentWallet.ecoPoints += 30;
+    localStorage.setItem("currentWallet", JSON.stringify(currentWallet));
+}
+
+    </script>
+    
+</body>
+</html>
+
+
+

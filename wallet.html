@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wallet - Eco Exchange</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            background-color: #32a852;
+            color: #fff;
+            padding: 0.5em 1em;
+            border-radius: 8px;
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2em;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li a {
+            font-family: 'Playfair Display', serif;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1em;
+            text-align: center;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            padding: 3em 2em;
+            max-width: 600px;
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .section h2 {
+            margin-bottom: 1em;
+            text-align: center;
+        }
+
+        .form-group {
+            margin-bottom: 1em;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5em;
+            font-weight: bold;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.5em;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 1em;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 0.75em;
+            background-color: #32a852;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 1em;
+            cursor: pointer;
+        }
+
+        .submit-btn:hover {
+            background-color: #28a745;
+        }
+
+        .wallet-info {
+            padding: 2em;
+            background-color: #f5f5f7;
+            border-radius: 8px;
+            margin-top: 1em;
+            text-align: center;
+            font-size: 1.2em;
+        }
+        .footer {
+            text-align: center;
+            padding: 2em;
+            background-color: #ffffff;
+            border-top: 1px solid #d2d2d7;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Eco Exchange</h1>
+        <nav>
+    <ul>
+        <li><a href="index.html">Home Page</a></li>
+        <li><a href="browse-items.html">Browse Items</a></li>
+        <li><a href="sign-in.html">Sign-In</a></li>
+        <li><a href="wallet.html">Wallet</a></li>
+        <li><a href="add-item.html">Add Item</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
+    </header>
+
+    <section class="section">
+        <h2>Wallet</h2>
+        <div id="wallet-info" class="wallet-info" style="display: none;">
+            <h3>Wallet Details</h3>
+            <p><strong>Wallet ID:</strong> <span id="wallet-id"></span></p>
+            <p><strong>Eco Points:</strong> <span id="eco-points">0</span></p>
+        </div>
+
+        <h2>Transfer Eco Points</h2>
+        <form id="transfer-form">
+            <div class="form-group">
+                <label for="recipient-wallet-id">Recipient's Wallet ID</label>
+                <input type="text" id="recipient-wallet-id" name="recipient-wallet-id" placeholder="Enter the recipient's Wallet ID" required>
+            </div>
+            <div class="form-group">
+                <label for="transfer-amount">Amount to Transfer</label>
+                <input type="number" id="transfer-amount" name="transfer-amount" placeholder="Enter the amount to transfer" required>
+            </div>
+            <button type="submit" class="submit-btn">Transfer</button>
+        </form>
+
+        <h2>Create Your Wallet</h2>
+        <form id="create-wallet-form">
+            <div class="form-group">
+                <label for="wallet-name">Your Name</label>
+                <input type="text" id="wallet-name" name="wallet-name" placeholder="Enter your name" required>
+            </div>
+            <div class="form-group">
+                <label for="wallet-email">Your Email</label>
+                <input type="email" id="wallet-email" name="wallet-email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="wallet-password">Password</label>
+                <input type="password" id="wallet-password" name="wallet-password" placeholder="Enter a password" required>
+            </div>
+            <button type="submit" class="submit-btn">Create Wallet</button>
+        </form>
+
+        <h2>Sign In to Your Wallet</h2>
+        <form id="sign-in-wallet-form">
+            <div class="form-group">
+                <label for="login-email">Your Email</label>
+                <input type="email" id="login-email" name="login-email" placeholder="Enter your email" required>
+            </div>
+            <div class="form-group">
+                <label for="login-password">Password</label>
+                <input type="password" id="login-password" name="login-password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit" class="submit-btn">Sign In</button>
+        </form>
+    </section>
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2025 Eco Exchange. All Rights Reserved to oday higaze. Promoting sustainability and waste reduction.</p>
+        </div>
+    </footer>
+    <script>
+        // Wallet creation, sign-in, transfer, and validation logic
+        // Consolidated to eliminate duplication
+        document.addEventListener("DOMContentLoaded", function () {
+            const walletInfoDiv = document.getElementById("wallet-info");
+            const walletIdSpan = document.getElementById("wallet-id");
+            const ecoPointsSpan = document.getElementById("eco-points");
+            const allWallets = JSON.parse(localStorage.getItem("ecoWallets")) || [];
+            let currentWallet = JSON.parse(localStorage.getItem("currentWallet"));
+
+            function updateWalletDisplay(wallet) {
+                walletInfoDiv.style.display = "block";
+                walletIdSpan.textContent = wallet.walletID;
+                ecoPointsSpan.textContent = wallet.ecoPoints;
+            }
+
+            function saveWallets() {
+                localStorage.setItem("ecoWallets", JSON.stringify(allWallets));
+            }
+
+            if (currentWallet) updateWalletDisplay(currentWallet);
+
+            document.getElementById("create-wallet-form").addEventListener("submit", function (e) {
+                e.preventDefault();
+                const walletID = `WALLET-${Date.now()}`;
+                const newWallet = {
+                    name: document.getElementById("wallet-name").value,
+                    email: document.getElementById("wallet-email").value,
+                    password: document.getElementById("wallet-password").value,
+                    walletID,
+                    ecoPoints: 0
+                };
+                allWallets.push(newWallet);
+                saveWallets();
+                alert("Wallet created successfully!");
+            });
+
+            document.getElementById("sign-in-wallet-form").addEventListener("submit", function (e) {
+                e.preventDefault();
+                const email = document.getElementById("login-email").value;
+                const password = document.getElementById("login-password").value;
+                const wallet = allWallets.find(w => w.email === email && w.password === password);
+                if (!wallet) return alert("Invalid email or password.");
+                currentWallet = wallet;
+                localStorage.setItem("currentWallet", JSON.stringify(wallet));
+                updateWalletDisplay(wallet);
+            });
+
+            document.getElementById("transfer-form").addEventListener("submit", function (e) {
+                e.preventDefault();
+                if (!currentWallet) return alert("Please sign in to your wallet.");
+                const recipientId = document.getElementById("recipient-wallet-id").value;
+                const transferAmount = parseInt(document.getElementById("transfer-amount").value);
+                if (isNaN(transferAmount) || transferAmount <= 0 || transferAmount > currentWallet.ecoPoints) {
+                    return alert("Invalid transfer amount.");
+                }
+                const recipientWallet = allWallets.find(w => w.walletID === recipientId);
+                if (!recipientWallet) return alert("Recipient Wallet ID not found.");
+                currentWallet.ecoPoints -= transferAmount;
+                recipientWallet.ecoPoints += transferAmount;
+                saveWallets();
+                localStorage.setItem("currentWallet", JSON.stringify(currentWallet));
+                updateWalletDisplay(currentWallet);
+                alert(`Successfully transferred ${transferAmount} Eco Points.`);
+            });
+        });
+    </script>
+</body>
+</html>

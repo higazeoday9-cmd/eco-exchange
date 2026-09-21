@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About - Eco Exchange</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: #f5f5f7;
+            color: #1d1d1f;
+        }
+
+        @keyframes backgroundScroll {
+            0% {
+                background-position: center top;
+            }
+            100% {
+                background-position: center bottom;
+            }
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 1em 2em;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header h1 {
+            font-family: 'Playfair Display', serif;
+            background-color: #32a852;
+            color: #fff;
+            padding: 0.5em 1em;
+            border-radius: 8px;
+            font-size: 1.5em;
+            margin: 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2em;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li a {
+            font-family: 'Playfair Display', serif;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1em;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .section {
+            padding: 3em 2em;
+            position: relative;
+            overflow: hidden;
+            min-height: 100vh;
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100%;
+            background-size: cover;
+            z-index: 0;
+            animation: backgroundScroll 10s infinite linear;
+        }
+
+        .background1 {
+            background: url('https://cdn.openart.ai/published/ks4qUHd1cpA8bZft9iXd/-3albVrc_7Ki2_1024.webp') no-repeat center center;
+        }
+
+        .background2 {
+            background: url('https://cdn.openart.ai/published/ks4qUHd1cpA8bZft9iXd/0OK8ujHH_FVrK_1024.webp') no-repeat center center;
+        }
+
+        .background3 {
+            background: url('https://cdn.openart.ai/published/ks4qUHd1cpA8bZft9iXd/Z2mNKv0l_p9M-_1024.webp') no-repeat center center;
+        }
+
+        .content {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: rgba(255, 255, 255, 0.9);
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
+            opacity: 0;
+            transform: translateY(50px);
+            animation: fadeInUp 1s ease-out forwards;
+        }
+
+        .content:nth-of-type(1) {
+            animation-delay: 0.3s;
+        }
+
+        .content:nth-of-type(2) {
+            animation-delay: 0.6s;
+        }
+
+        .content:nth-of-type(3) {
+            animation-delay: 0.9s;
+        }
+
+        h2 {
+            margin-bottom: 1em;
+        }
+
+        .footer {
+            text-align: center;
+            padding: 2em;
+            background-color: #ffffff;
+            border-top: 1px solid #d2d2d7;
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Eco Exchange</h1>
+        <nav>
+    <ul>
+        <li><a href="index.html">Home Page</a></li>
+        <li><a href="browse-items.html">Browse Items</a></li>
+        <li><a href="sign-in.html">Sign-In</a></li>
+        <li><a href="wallet.html">Wallet</a></li>
+        <li><a href="add-item.html">Add Item</a></li>
+        <li><a href="about.html">About</a></li>
+    </ul>
+</nav>
+        <div id="profile-container">
+            <!-- Profile icon will be dynamically added here -->
+        </div>
+    </header>
+
+    <section class="section">
+        <div class="background background1"></div>
+        <div class="content">
+            <h2>About Eco Exchange</h2>
+            <p>Eco Exchange is a non-profit platform dedicated to promoting sustainability and waste reduction. Our mission is to create a community-driven marketplace where users can exchange their unused items for Eco Points instead of money.</p>
+            <p>Through Eco Exchange, users can extend the lifecycle of their products and contribute to a more sustainable future. By reducing waste and encouraging the reuse of items, we aim to make a positive environmental impact.</p>
+            <p>We believe in empowering individuals to maximize the value of their belongings while fostering a culture of sustainability. Join us in making a difference, one exchange at a time.</p>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="background background2"></div>
+        <div class="content">
+            <h2>Why Choose Eco Exchange?</h2>
+            <p>Eco Exchange offers a unique approach to sustainability by eliminating monetary transactions and focusing on the value of reuse. Here's why you should choose us:</p>
+            <ul>
+                <li><strong>Promote Sustainability:</strong> Reduce waste and extend the lifecycle of your items.</li>
+                <li><strong>Community-Driven:</strong> Connect with like-minded individuals who care about the environment.</li>
+                <li><strong>Easy to Use:</strong> Our platform makes exchanging items simple and hassle-free.</li>
+                <li><strong>No Money Needed:</strong> Use Eco Points to acquire items, making the process fair and accessible.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="background background3"></div>
+        <div class="content">
+            <h2>Why We Made Eco Exchange</h2>
+            <p>We created Eco Exchange to address the growing concerns of waste and environmental degradation. Our goal is to empower individuals to make sustainable choices by offering a platform that values reuse over disposal. Together, we can create a culture of sustainability, reduce waste, and make the world a cleaner, greener place for future generations.</p>
+        </div>
+    </section>
+    <footer class="footer">
+            <p>&copy; 2025 Eco Exchange. All Rights Reserved to 325383842_211614821_326183258_213758014. Promoting sustainability and waste reduction.</p>
+        </div>
+    </footer>
+</body>
+</html>
+
