@@ -2,7 +2,7 @@
 
 A community-driven, zero-currency C2C exchange platform engineered to reduce consumer waste by replacing monetary transactions with a peer-to-peer digital credit economy ("Eco Points").
 
-🔗 **Live Application:** [https://<your-username>.github.io/eco-exchange/](https://<your-username>.github.io/eco-exchange/)
+🔗 **Live Application:** [[https://<your-username>.github.io/eco-exchange/](https://github.com/higazeoday9-cmd/eco-exchange.git)](https://<your-username>.github.io/eco-exchange/)
 
 ---
 
